@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.cartellostradale.keepTrack.be.converters.users.UserDtoConverter;
 import com.cartellostradale.keepTrack.be.entities.users.User;
+import com.cartellostradale.keepTrack.commons.costants.ConversionLevel;
 import com.cartellostradale.keepTrack.commons.dtos.users.UserDto;
 
 import jakarta.persistence.EntityManager;
@@ -32,7 +33,7 @@ public class UserSessionBean {
             result = query.getSingleResult();
 
             if (result != null) {
-                resultDto = UserDtoConverter.toDto(result, null);
+                resultDto = UserDtoConverter.toDto(result, null, ConversionLevel.COMPLETE);
             }
 
         } catch (NoResultException nre) {
