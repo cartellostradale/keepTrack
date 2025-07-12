@@ -3,5 +3,8 @@
     <label for="user">User</label>
     <input id="user" [(ngModel)]="user" type="text" placeholder="Insert your username" />
     <button (click)="login()"> login </button>
+    <br>
+    <label for="error" *ngIf="showErrorNotFound">User not found</label>
+    <label for="error" *ngIf="showErrorEmpty">Empty search</label>
   </div>
 </div>
